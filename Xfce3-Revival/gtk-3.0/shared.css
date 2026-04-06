@@ -1,0 +1,340 @@
+/* XFWM theme colors */
+.gtkstyle-fallback:selected:not(:focus) {
+	color: @active_titlebar_text;
+        background-color: @active_titlebar;
+}
+
+.gtkstyle-fallback:disabled {
+	color: @inactive_titlebar_text;
+        background-color: @inactive_titlebar;
+}
+
+/* Text and background color */
+.background, button, check:hover, frame, menubar, notebook, paned,
+radio:hover, slider, tab:checked, .toolbar {
+	color: @text_color;
+	background-color: @control_bg;
+}
+
+.textview, .view, check, combobox menu, iconview, list, radio,
+textview text, sidebar treeview, view {
+	color: @text_color;
+	background-color: @view_bg;
+}
+
+entry {
+	color: @entry_text_color;
+	background-color: @entry_bg;
+}
+
+combobox menuitem:hover, combobox menuitem:checked, levelbar .filled,
+progress, switch:checked, 
+:selected, selection, XfdesktopIconView.label:selected {
+	color: @selected_text;
+	background-color: @selected_bg;
+}
+
+button:checked, progressbar, switch, trough, tab, toolbar :disabled {
+        background-color: @shadow;
+}
+
+*:disabled {
+	color: @disabled_text;
+	text-shadow: 0 1px 1px @illumination;
+}
+
+button:hover, menuitem:hover, menuitem:selected,
+*:selected:not(:focus), selection:not(:focus) {
+	background-color: @hover_bg;
+}
+
+tooltip {
+	border: 1px solid @border_color;
+}
+
+tooltip.background {
+	background-color: #ffff50;
+}
+
+separator {
+	background-color: @shadow;
+}
+
+.rubberband, XfdesktopIconView .rubberband {
+	background-color: alpha(@selected_bg, .3);
+	border: 1px solid @selected_bg;
+}
+
+filechooser {
+	margin: 6px;
+}
+
+.dialog-action-box {
+	margin-bottom: 3px;
+}
+
+.dialog-action-box button, factionbar {
+	margin: 0 0 0 2px;
+}
+
+/* Sizes and margins */
+arrow, button, check, entry, trough, progressbar,
+radio, slider, tab {
+	min-width: 13px;
+	min-height: 13px;
+}
+
+switch {
+	min-width: 50px;
+	min-height: 25px;
+}
+
+button, entry, levelbar trough, menuitem, progressbar, tab, tab label {
+	padding: 2px;
+}
+
+checkbutton, radiobutton, scale, separator, stackswitcher button {
+	margin: 2px;
+}
+
+progressbar.vertical progress, .levelbar.vertical .filled {
+	min-width: 14px;
+	margin-left: -2px;
+}
+
+progressbar.horizontal progress, .levelbar.horizontal .filled {
+	min-height: 14px;
+	margin-top: -2px;
+}
+
+scale.horizontal trough {
+	padding: 0 15px;
+}
+scale.vertical trough {
+	padding: 15px 0;
+}
+scale.horizontal slider {
+	min-width: 30px;
+	margin: -1px 0 1px;
+}
+scale.vertical slider {
+	min-height: 30px;
+	margin: 0 1px 0 -1px;
+}
+
+scrollbar button {
+	margin: 0px;
+	padding: 0px;
+}
+
+combobox menuitem {
+	margin: 0 4px;
+	padding: 0;
+}
+
+separator {
+	min-width: 1px;
+	min-height: 1px;
+}
+
+paned separator {
+	min-width: 5px;
+	min-height: 5px;
+        box-shadow: 1px 1px 0 0 @illumination inset, -1px -1px 0 0px @border_color inset;
+	background: transparent;
+}
+
+stackswitcher button {
+	padding: 4px;
+}
+
+/* Borders and outlines */
+frame, notebook {
+	border: 2px groove @border_color;
+	padding: 3px;
+}
+
+button, entry, levelbar trough, 
+menu, menuitem:hover, menuitem:selected,
+progressbar, scale trough, slider, switch {
+	border: 1px solid @border_color;
+	border-radius: 2px;
+}
+
+menuitem, notebook tab > box {
+	border: 1px solid transparent;
+}
+
+button, menu, menuitem:hover, menuitem:selected, slider {
+	box-shadow: 1px 1px 0 0 @illumination inset, -1px -1px 0 0px @shadow inset;
+}
+
+buttonbox button.default:not(:focus){
+	box-shadow: 1px 1px 0 0 @illumination inset, -1px -1px 0 0px @shadow inset,
+		 4px 4px 0px 1px @border_color, 3px 3px 0px 1px @control_bg,
+		-4px -4px 0px 1px @border_color, -3px -3px 0px 1px @control_bg,
+		-4px 4px 0px 1px @border_color, -3px 3px 0px 1px @control_bg,
+		4px -4px 0px 1px @border_color, 3px -3px 0px 1px @control_bg;
+}
+
+button:checked, levelbar trough, progressbar, scale trough, switch {
+	box-shadow: -1px -1px 0 0 @illumination inset, 1px 1px 0 0px @shadow inset;
+}
+
+progress, levelbar .filled {
+        box-shadow: 1px 1px 0 0 shade(@selected_bg, 1.4) inset,
+		-1px -1px 0 0px shade(@selected_bg, .9) inset;
+	margin: 0px;
+}
+
+button:focus, entry:focus, switch slider:focus {
+	box-shadow: 1px 1px 0 0 @illumination inset,
+		-1px -1px 0 0px @shadow inset, 0 0 0 1px @text_color;
+}
+
+entry:focus {
+	box-shadow: -1px -1px 0 0 shade(@entry_bg, 1.3) inset,
+		1px 1px 0 0px shade(@entry_bg, 0.7) inset, 0 0 0 1px @text_color;
+}
+
+button:checked:focus, scale:focus trough {
+	box-shadow: -1px -1px 0 0 @illumination inset,
+		1px 1px 0 0px @shadow inset, 0 0 0 1px @text_color;
+}
+
+button:focus, button.default, entry:focus,
+scale:focus, switch slider:focus {
+	-gtk-outline-radius: 3px;
+	outline: 1px solid @border_color;
+	outline-offset: 4px;
+}
+
+checkbutton:focus, entry:focus, label:focus, radiobutton:focus {
+	outline: 1px solid @text_color;
+}
+
+button:active, .xfce4-panel button:active {
+	background-color: @pressed_bg;
+	border: 1px solid shade(@pressed_bg, 0.7);
+	box-shadow: 0 0 0 1px @text_color;
+}
+
+stack, tab {
+	border: 1px @border_color outset; 	
+}
+
+tab {
+	box-shadow: none;
+	border-radius: 0px;
+}
+
+notebook:focus tab:checked > label {
+	box-shadow: 1px 1px 0px 0px black inset, -1px -1px 0 0 black inset;
+}
+
+notebook:focus tab:checked > box {
+	border: 1px solid @text_color;
+}
+
+header.top tab {
+	border-bottom:none;
+}
+header.bottom tab {
+	border-top:none;
+}
+header.left tab {
+	border-right:none;
+}
+header.right tab {
+	border-left:none;
+}
+
+header.top tab:checked {
+	margin: -2px 0 -1px;
+}
+header.bottom tab:checked {
+	margin: -1px 0 -2px;
+}
+header.left tab:checked {
+	margin: 0 -1px 0 -2px;
+}
+header.right tab:checked {
+	margin: 0 -2px 0 -1px;
+} 
+ 
+combobox menu {
+	border: 3px double @border_color;
+	padding: 4px 0;
+}
+
+combobox menuitem, combobox menuitem:hover, combobox menuitem:selected,
+toolbar button {
+	border: 0px;
+	box-shadow: none;
+}
+
+switch:checked {
+	box-shadow: -1px -1px 0 0 shade(@selected_bg, 1.4) inset,
+		1px 1px 0 0px shade(@selected_bg, .9) inset;
+}
+
+check, radio {
+	border: 1px inset @border_color;
+	padding: 0px;
+	margin: 3px;
+}
+
+radio {
+	border-radius: 99px;
+}
+
+separator {
+	box-shadow: 1px 1px 0 0 @illumination;
+}
+
+/* Icons */
+check, arrow, scrollbar button {
+	background-repeat: no-repeat;
+	background-position: center center;
+	-gtk-icon-source: none;
+}
+
+scale.vertical slider, scrollbar.vertical slider {
+	background: repeating-linear-gradient(@border_color, @border_color 1px, @illumination 1px, @illumination 2px) 0 calc(50% + 0.25px) @control_bg;
+	background-size: 11px 10px;
+	background-repeat: no-repeat;
+}
+
+scale.horizontal slider, scrollbar.horizontal slider {
+	background: repeating-linear-gradient(90deg, @border_color, @border_color 1px, @illumination 1px, @illumination 2px) calc(50% + 0.25px) 0 @control_bg;
+	background-size: 10px 11px;
+	background-repeat: no-repeat;
+}
+
+scrollbar.vertical button.up {
+	background-image: url("up.png")
+}
+
+combobox arrow, expander arrow:checked, scrollbar.vertical button.down {
+	background-image: url("down.png")
+}
+
+combobox button:disabled arrow {
+	background-image: url("down-disabled.png");
+}
+
+scrollbar.horizontal button.up, menuitem arrow:dir(rtl) {
+	background-image: url("left.png")
+}
+
+expander arrow, scrollbar.horizontal button.down, menuitem arrow:dir(ltr) {
+	background-image: url("right.png");
+}
+
+check:checked {
+	background-image: url("checkmark.png");
+}
+
+spinner:checked {
+	animation: spin;
+}
