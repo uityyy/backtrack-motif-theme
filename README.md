@@ -13,8 +13,11 @@ __This theme is in no way endorsed or supported by the XFCE desktop.__ Please di
 ## No Copyright Restrictions
 xfce3-revival was written in entirety by Timothy Gaskell in 2026 and is placed in the public domain under the Creative Commons CC-0 public domain declaration. Please do not submit pull requests unless your code is also fully original and placed in the public domain.
 
-In my experience, theme designers create first, share second, and think about papaperwork only third if at all. There is much more danger of finding a theme that cannot be distributed because the author mixed GPL-2-only and GPL3 code or some such boring legal impossibility than of finding your theme co-opted by evil corporate interests. Accordingly, I prefer to share original work with as few strings as possible attached, not even requiring attribution.
+In my experience, theme designers create first, share second, and think about paperwork only third if at all. There is much more danger of finding a theme that cannot be distributed because the author mixed GPL-2-only and GPL3 code or some such boring legal impossibility than of finding your theme co-opted by evil corporate interests. Accordingly, I prefer to share original work with as few strings as possible attached, not even requiring attribution.
+
 
 Blessings,
+
 Timothy N. Gaskell
+
 Eastertide, 2026
