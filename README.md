@@ -1,8 +1,20 @@
 # xfce3-revival-theme
-
 Xfce3-Revival is a GTK3 theme based on the look of XFCE 3.8's xfce GTK1 engine. The theme is, however, written from scratch with no original XFCE code and placed in the public domian. While the general look of XFCE 3 is replicated, pixel-perfect recreation has not been attempted. I have, however, provided a selection of color varients linked to the main theme based on some of what I hope were the more interesting color palettes shipped with XFCE 3.
 
 __This theme is in no way endorsed or supported by the XFCE desktop.__ Please direct all pleas for help to me. I'm the madman trying to bring 2002 XFCE's looks to 2025's XFCE.
+
+## Examples
+Here is what the theme looks like in practice:
+![Xfce3-Revival with the default palette](Xfce3-Revival-Demo.png)
+
+| Multiple              | Color                 | Variants                    |
+| --------------------- | --------------------- | --------------------------- |
+| Alpine                | Analogue              | Dust                        |
+| ![Alpine](Alpine.png) | ![Analogue](Analogue.png) | ![Dust](Dust.png)       |
+| Fall                  | Golden                | Grayscale                   |
+| ![Fall](Fall.png)     | ![Golden](Golden.png) | ![Grayscale](Grayscale.png) |
+| Mauve                 | Sunny                 | Troica                      |
+| ![Mauve](Mauve.png)   | ![Sunny](Sunny.png)   | ![Troica](Troica.png)       |
 
 ## Limitations
 - There is not (yet) any attempt to recreate the XFCE 3 themes that used a repeating texture for window and widget backgrounds.
