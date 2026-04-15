@@ -9,9 +9,15 @@
         background-color: @inactive_titlebar;
 }
 
+/* Focus indicators */
+* {
+	outline: 1px solid @text_color;
+	outline-offset: -2px;
+}
+
 /* Text and background color */
-.background, button, check:hover, frame, menubar, notebook, paned,
-radio:hover, slider, tab:checked, .toolbar {
+.background, button, calendar.header, check:hover, frame, menubar, notebook,
+paned, radio:hover, slider, tab:checked, .toolbar {
 	color: @text_color;
 	background-color: @control_bg;
 }
@@ -34,7 +40,8 @@ progress, switch:checked,
 	background-color: @selected_bg;
 }
 
-button:checked, progressbar, switch, trough, tab, toolbar :disabled {
+button:checked, calendar.highlight, progressbar, switch,
+trough, tab, toolbar :disabled {
         background-color: @shadow;
 }
 
@@ -154,7 +161,7 @@ frame, notebook {
 	padding: 3px;
 }
 
-button, entry, levelbar trough, 
+button, calendar, calendar.header, entry, levelbar trough, 
 menu, menuitem:hover, menuitem:selected,
 progressbar, scale trough, slider, switch {
 	border: 1px solid @border_color;
@@ -165,7 +172,7 @@ menuitem, notebook tab > box {
 	border: 1px solid transparent;
 }
 
-button, menu, menuitem:hover, menuitem:selected, slider {
+button, calendar.header, menu, menuitem:hover, menuitem:selected, slider {
 	box-shadow: 1px 1px 0 0 @illumination inset, -1px -1px 0 0px @shadow inset;
 }
 
@@ -226,14 +233,6 @@ stack, tab {
 tab {
 	box-shadow: none;
 	border-radius: 0px;
-}
-
-notebook:focus tab:checked > label {
-	box-shadow: 1px 1px 0px 0px black inset, -1px -1px 0 0 black inset;
-}
-
-notebook:focus tab:checked > box {
-	border: 1px solid @text_color;
 }
 
 header.top tab {
