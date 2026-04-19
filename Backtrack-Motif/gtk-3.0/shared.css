@@ -275,13 +275,18 @@ header.right tab:checked {
 } 
  
 combobox menu {
-	border: 3px double @border_color;
+	border: 1px solid @border_color;
 	padding: 4px 0;
 }
 
-combobox menuitem, combobox menuitem:selected {
-	border: 0px;
+combobox menuitem, combobox menuitem:selected, combobox menuitem:hover {
+	border: 0;
 	box-shadow: none;
+}
+
+combobox menuitem:selected, combobox menuitem:hover {
+	color: @selected_text;
+	background-color: @selected_bg;
 }
 
 switch:checked {
