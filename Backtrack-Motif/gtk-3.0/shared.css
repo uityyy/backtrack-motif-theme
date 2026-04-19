@@ -1,0 +1,462 @@
+/* XFWM theme colors */
+.gtkstyle-fallback:selected:not(:focus) {
+        color: @active_titlebar_text;
+        background-color: @active_titlebar;
+}
+
+.gtkstyle-fallback:disabled {
+	color: @inactive_titlebar_text;
+        background-color: @inactive_titlebar;
+}
+
+/* Focus indicators */
+* {
+	outline: 1px solid @text_color;
+	outline-offset: -2px;
+}
+
+/* Text and background color */
+.background, button, calendar.header, frame, menu, menubar,
+notebook, paned, slider, tab:checked, .toolbar {
+	color: @text_color;
+	background-color: @control_bg;
+}
+
+.textview, .view, combobox menu, iconview, list,
+textview text, sidebar treeview, view {
+	color: @text_color;
+	background-color: @view_bg;
+}
+
+entry {
+	color: @entry_text_color;
+	background-color: @entry_bg;
+}
+
+combobox combobox menuitem:focus, menuitem:checked, levelbar .filled,
+progress, switch:checked, 
+:selected, selection, XfdesktopIconView.label:selected {
+	color: @selected_text;
+	background-color: @selected_bg;
+}
+
+button:checked, calendar.highlight, progressbar, switch,
+scrollbar, tab, tab:not(:checked) button, toolbar :disabled {
+        background-color: @shadow;
+}
+
+*:disabled {
+	color: @disabled_text;
+	text-shadow: 0 1px 1px @illumination;
+}
+
+tooltip {
+	border: 1px solid @border_color;
+}
+
+tooltip.background {
+	background-color: #ffff50;
+}
+
+.rubberband, XfdesktopIconView .rubberband {
+	background-color: alpha(@selected_bg, .3);
+	border: 1px solid @selected_bg;
+}
+
+button.link label {
+	text-decoration: underline;
+}
+
+button.link:not(:disabled) label {
+	color: @selected_bg;
+}
+
+/* Sizes and margins */
+arrow, button, entry, trough, progressbar,
+slider, tab {
+	min-width: 10px;
+	min-height: 10px;
+}
+
+check {
+	min-width: 11px;
+	min-height: 11px;
+}
+
+menu check {
+	min-width: 5px;
+	min-height: 5px;
+}
+
+arrow, scrollbar button {
+	min-width: 14px;
+	min-height: 14px;
+}
+
+menu arrow {
+	min-width: 12px;
+	min-height: 12px;
+}
+
+radio {
+	min-width: 15px;
+	min-height: 15px;
+}
+
+menu radio {
+	min-width: 9px;
+	min-height: 9px;
+}
+
+switch {
+	min-width: 50px;
+	min-height: 25px;
+}
+
+button, entry, levelbar trough, menuitem, progressbar, tab, tab label {
+	padding: 2px;
+}
+
+#xfce4-terminal-notebook {
+	padding: 5px;
+}
+
+button, checkbutton, radiobutton, scale, separator, stackswitcher button {
+	margin: 2px;
+}
+
+treeview button, .xfce4-panel button {
+	margin: 0px;
+}
+
+toolbar button {
+	margin: 3px 1px 0 1px;
+}
+
+progressbar.vertical progress, .levelbar.vertical .filled {
+	min-width: 8px;
+	margin-left: -2px;
+}
+
+progressbar.horizontal progress, .levelbar.horizontal .filled {
+	min-height: 8px;
+	margin-top: -2px;
+}
+
+scale.horizontal trough {
+	padding: 0 10px;
+}
+scale.vertical trough {
+	padding: 10px 0;
+}
+scale.horizontal slider {
+	min-width: 15px;
+	margin: -1px 0 1px;
+}
+scale.vertical slider {
+	min-height: 15px;
+	margin: 0 1px 0 -1px;
+}
+
+scrollbar button:not(.flat) {
+	border: 0px;
+	margin: 0px;
+	padding: 0px;
+}
+
+combobox menuitem {
+	margin: 0 4px;
+	padding: 0;
+}
+
+stackswitcher button {
+	padding: 4px;
+}
+
+filechooser {
+	margin: 6px;
+}
+
+/* Borders and outlines */
+frame, notebook {
+	padding: 5px; /* padding on notebook.frame allows taller focused tabs */
+}
+
+frame.border-groove {
+	border: 2px groove shade(@control_bg, 0.7);
+}
+
+frame.border-ridge {
+	border: 2px ridge shade(@control_bg, 0.7);
+}
+
+button:not(.flat), #applicationmenu-button, calendar, calendar.header, check,
+frame.border-outset, #launcher-arrow, levelbar trough, menu, menubar,
+menuitem:hover, notebook.frame stack, progressbar, scale trough, slider,
+switch, tab, toolbar button.flat, toolbutton button.flat {
+	border: 2px solid;
+	border-color: @illumination @border_color @border_color @illumination;
+}
+
+button.flat {
+	border: 2px solid transparent;
+}
+
+menuitem, notebook tab > box {
+	border: 2px solid transparent;
+}
+
+menu, menuitem:selected {
+	box-shadow: 1px 1px 0 0 @illumination inset, -1px -1px 0 0px @shadow inset;
+}
+
+button:active, .xfce4-panel button:active, button:checked, check:checked,
+entry, frame.border-inset, levelbar trough, iconview, list, progressbar,
+scale trough, notebook.xfce4-terminal-notebook, scrollbar, scrolledwindow,
+switch {
+	border: 2px solid;
+	border-color: @border_color @illumination @illumination @border_color;
+}
+
+scrolledwindow > scrollbar {
+	border-width: 0 0 0 2px;
+}
+
+progress, levelbar .filled {
+        border: 2px outset shade(@selected_bg, 0.9);
+}
+
+button:focus, button.default, entry:focus,
+scale:focus, switch slider:focus {
+	outline: 2px solid @text_color;
+	outline-offset: 5px;
+	box-shadow:  -3px 3px 0 0 @border_color, 3px -3px 0 0 @border_color, -3px -3px 0 0 @border_color,
+		3px -2px 0 0 @illumination, -2px 3px 0 0 @illumination, 3px 3px 0 0 @illumination,
+		-2px -2px 0 0 @control_bg, 2px -2px 0 0 @control_bg, 
+		2px 2px 0 0 @control_bg, -2px 2px 0 0 @control_bg;
+}
+
+checkbutton:focus, entry:focus, label:focus, radiobutton:focus {
+	outline: 1px solid @text_color;
+}
+
+button:active, .xfce4-panel button:active, check:checked {
+	background-color: @pressed_bg;
+}
+
+stack, tab {
+	border-radius: 2px;
+}
+
+header.top tab {
+	border-bottom:none;
+}
+header.bottom tab {
+	border-top:none;
+}
+header.left tab {
+	border-right:none;
+}
+header.right tab {
+	border-left:none;
+}
+
+header.top tab:checked {
+	margin: -2px 0 -2px;
+}
+header.bottom tab:checked {
+	margin: -2px 0 -2px;
+}
+header.left tab:checked {
+	margin: 0 -2px 0 -2px;
+}
+header.right tab:checked {
+	margin: 0 -2px 0 -2px;
+} 
+ 
+combobox menu {
+	border: 3px double @border_color;
+	padding: 4px 0;
+}
+
+combobox menuitem, combobox menuitem:selected {
+	border: 0px;
+	box-shadow: none;
+}
+
+switch:checked {
+	border: 2px inset @border_color;
+}
+
+check, radio {
+	margin: 3px;
+}
+
+separator {
+	border: 1px solid;
+	border-color: @border_color @illumination @illumination @border_color;
+}
+
+toolbar separator {
+	border: 0px;
+	width: 10px;
+}
+
+paned separator {
+	border: 1px solid;
+	border-color: @illumination @border_color @border_color @illumination;
+}
+
+/* Icons */
+arrow, check, radio, scrollbar button {
+	background-repeat: no-repeat;
+	background-position: center center;
+	background-size: 14px 14px;
+	-gtk-icon-source: none;
+}
+
+radio {
+	border: 0px;
+	background-size: 100% 100%;
+	background-image: url("radio.png");
+}
+
+radio:checked {
+	background-image: url("radio-checked.png");
+}
+
+scrollbar.vertical button.up {
+	background: linear-gradient(-65deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
+		linear-gradient(65deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow_bg 72%),
+		linear-gradient(@control_bg 85%, @border_color 85%);
+	margin-bottom: 1px;
+}
+
+scrollbar.vertical button.down {
+	background: linear-gradient(@illumination 15%, transparent 15%),
+		linear-gradient(-241deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
+		linear-gradient(241deg, @control_bg 62%, @illumination 62%, @illumination 72%, @shadow_bg 72%);
+	margin-top: 1px;
+}
+
+scrollbar.vertical button.up:active {
+	background: linear-gradient(-65deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
+		linear-gradient(65deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow_bg 72%),
+		linear-gradient(@control_bg 85%, @illumination 85%);
+}
+
+scrollbar.vertical button.down:active {
+	background: linear-gradient(@border_color 15%, transparent 15%),
+		linear-gradient(-241deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
+		linear-gradient(241deg, @control_bg 62%, @border_color 62%, @border_color 72%, @shadow_bg 72%);
+}
+
+scrollbar.horizontal button.up {
+        background:
+                linear-gradient(-25deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
+		linear-gradient(-155deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
+                linear-gradient(90deg, @control_bg 85%, @border_color 85%);
+        margin-right: 1px;
+}
+
+scrollbar.horizontal button.down {
+        background:
+                linear-gradient(25deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
+		linear-gradient(155deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
+                linear-gradient(-90deg, @control_bg 85%, @illumination 85%);
+        margin-left: 1px;
+}
+
+scrollbar.horizontal button.up:active {
+        background:
+                linear-gradient(-25deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
+		linear-gradient(-155deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
+                linear-gradient(90deg, @control_bg 85%, @illumination 85%);
+        margin-right: 1px;
+}
+
+scrollbar.horizontal button.down:active {
+        background:
+                linear-gradient(25deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
+		linear-gradient(155deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
+                linear-gradient(-90deg, @control_bg 85%, @border_color 85%);
+        margin-left: 1px;
+}
+
+combobox arrow, expander arrow:checked {
+	background-image: url("down.png");
+}
+
+combobox button:disabled arrow {
+	background-image: url("down-disabled.png");
+}
+
+scrollbar.horizontal button.up, menuitem arrow:dir(rtl) {
+	background-image: url("left.png")
+}
+
+expander arrow, menuitem arrow:dir(ltr) {
+	background-image: url("right.png");
+}
+
+spinner:checked {
+	animation: spin;
+}
+
+
+/* XFCE panel */
+.xfce4-panel.horizontal {
+	box-shadow: 0 2px 0 0 @illumination inset,
+		0 -2px 0 0 @border_color inset;
+}
+
+.xfce4-panel.vertical, .xfce4-panel.deskbar {
+	box-shadow: 2px 0 0 0 @illumination inset,
+		-2px 0 0 0 @border_color inset;
+}
+
+.xfce4-panel.horizontal box {
+	border-top: 2px solid transparent;
+	border-bottom: 2px solid transparent;
+}
+
+.xfce4-panel.vertical box, .xfce4-panel.deskbar box {
+	border-left: 2px solid transparent;
+	border-right: 2px solid transparent;
+}
+
+#tasklist-2 box { border: 0px; }
+
+#XfcePanelWindowWrapper {
+	box-shadow: none;
+}
+
+#systray-1 box, #systray-2 box, #systray-3 box, #systray-4 box,
+#systray-5 box, #systray-6 box, #systray-7 box, #systray-8 box,
+#systray-9 box, #systray-10 box, #systray-12 box, #systray-13 box,
+#systray-14 box, #systray-15 box, #systray-16 box, #systray-17 box,
+#systray-18 box, #systray-19 box, #systray-20 box {
+	margin-top: -2px;
+}
+
+.xfce4-panel #clock-button {
+	margin: 2px;
+}
+
+.xfce4-panel.horizontal #showdesktop-button {
+	border-left: 0px;
+	border-bottom: 2px solid @border_color;
+}
+
+.xfce4-panel.vertical #showdesktop-button, .xfce4-panel.deskbar #showdesktop-button {
+	border-top: 0px;
+	border-right: 2px solid @border_color;
+}
+
+#launcher-arrow {
+	margin: 0px 1px 0 1px;
+}
+
+#applicationmenu-button {
+	margin-right: 2px;
+}
