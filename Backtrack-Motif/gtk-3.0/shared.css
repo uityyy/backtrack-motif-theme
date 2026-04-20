@@ -198,16 +198,8 @@ switch, tab, toolbar button.flat, toolbutton button.flat {
 	border-color: @illumination @border_color @border_color @illumination;
 }
 
-button.flat {
+button.flat, menuitem, notebook tab > box {
 	border: 2px solid transparent;
-}
-
-menuitem, notebook tab > box {
-	border: 2px solid transparent;
-}
-
-menu, menuitem:selected {
-	box-shadow: 1px 1px 0 0 @illumination inset, -1px -1px 0 0px @shadow inset;
 }
 
 button:active, .xfce4-panel button:active, button:checked, check:checked,
@@ -261,16 +253,10 @@ header.right tab {
 	border-left:none;
 }
 
-header.top tab:checked {
+header.top tab:checked, header.bottom tab:checked {
 	margin: -2px 0 -2px;
 }
-header.bottom tab:checked {
-	margin: -2px 0 -2px;
-}
-header.left tab:checked {
-	margin: 0 -2px 0 -2px;
-}
-header.right tab:checked {
+header.left tab:checked, header.right tab:checked {
 	margin: 0 -2px 0 -2px;
 } 
  
