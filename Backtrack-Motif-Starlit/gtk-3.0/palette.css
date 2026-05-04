@@ -5,7 +5,7 @@
 @define-color hover_bg #595959;
 @define-color active_titlebar #334466;
 @define-color active_titlebar_text #ccc;
-@define-color inactive_titlebar @control_bg
+@define-color inactive_titlebar @control_bg;
 @define-color inactive_titlebar_text @view_bg;
 
 /* Observed colors* */
