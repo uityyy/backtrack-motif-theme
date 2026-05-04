@@ -47,7 +47,7 @@ scrollbar, tab, tab:not(:checked) button, toolbar :disabled {
 
 *:disabled {
 	color: @disabled_text;
-	text-shadow: 0 1px 1px @illumination;
+	text-shadow: 1px 1px 0 @illumination;
 }
 
 tooltip {
@@ -198,16 +198,8 @@ switch, tab, toolbar button.flat, toolbutton button.flat {
 	border-color: @illumination @border_color @border_color @illumination;
 }
 
-button.flat {
+button.flat, menuitem, notebook tab > box {
 	border: 2px solid transparent;
-}
-
-menuitem, notebook tab > box {
-	border: 2px solid transparent;
-}
-
-menu, menuitem:selected {
-	box-shadow: 1px 1px 0 0 @illumination inset, -1px -1px 0 0px @shadow inset;
 }
 
 button:active, .xfce4-panel button:active, button:checked, check:checked,
@@ -218,8 +210,12 @@ switch {
 	border-color: @border_color @illumination @illumination @border_color;
 }
 
-scrolledwindow > scrollbar {
+scrolledwindow > scrollbar.vertical {
 	border-width: 0 0 0 2px;
+}
+
+scrolledwindow > scrollbar.horizontal {
+	border-width: 2px 0 0 0;
 }
 
 progress, levelbar .filled {
@@ -261,16 +257,10 @@ header.right tab {
 	border-left:none;
 }
 
-header.top tab:checked {
+header.top tab:checked, header.bottom tab:checked {
 	margin: -2px 0 -2px;
 }
-header.bottom tab:checked {
-	margin: -2px 0 -2px;
-}
-header.left tab:checked {
-	margin: 0 -2px 0 -2px;
-}
-header.right tab:checked {
+header.left tab:checked, header.right tab:checked {
 	margin: 0 -2px 0 -2px;
 } 
  
@@ -332,28 +322,28 @@ radio:checked {
 
 scrollbar.vertical button.up {
 	background: linear-gradient(-65deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
-		linear-gradient(65deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow_bg 72%),
-		linear-gradient(@control_bg 85%, @border_color 85%);
+		linear-gradient(transparent 85%, @border_color 85%),
+		linear-gradient(65deg, @control_bg 62%, @border_color 62%, @border_color 72%, @shadow 72%);
 	margin-bottom: 1px;
 }
 
 scrollbar.vertical button.down {
 	background: linear-gradient(@illumination 15%, transparent 15%),
 		linear-gradient(-241deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
-		linear-gradient(241deg, @control_bg 62%, @illumination 62%, @illumination 72%, @shadow_bg 72%);
+		linear-gradient(241deg, @control_bg 62%, @illumination 62%, @illumination 72%, @shadow 72%);
 	margin-top: 1px;
 }
 
 scrollbar.vertical button.up:active {
 	background: linear-gradient(-65deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
-		linear-gradient(65deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow_bg 72%),
-		linear-gradient(@control_bg 85%, @illumination 85%);
+		linear-gradient(transparent 85%, @illumination 85%),
+		linear-gradient(65deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%);
 }
 
 scrollbar.vertical button.down:active {
 	background: linear-gradient(@border_color 15%, transparent 15%),
 		linear-gradient(-241deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
-		linear-gradient(241deg, @control_bg 62%, @border_color 62%, @border_color 72%, @shadow_bg 72%);
+		linear-gradient(241deg, @control_bg 62%, @border_color 62%, @border_color 72%, @shadow 72%);
 }
 
 scrollbar.horizontal button.up {
@@ -377,7 +367,6 @@ scrollbar.horizontal button.up:active {
                 linear-gradient(-25deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
 		linear-gradient(-155deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
                 linear-gradient(90deg, @control_bg 85%, @illumination 85%);
-        margin-right: 1px;
 }
 
 scrollbar.horizontal button.down:active {
@@ -385,7 +374,6 @@ scrollbar.horizontal button.down:active {
                 linear-gradient(25deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
 		linear-gradient(155deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
                 linear-gradient(-90deg, @control_bg 85%, @border_color 85%);
-        margin-left: 1px;
 }
 
 combobox arrow, expander arrow:checked {
@@ -396,7 +384,7 @@ combobox button:disabled arrow {
 	background-image: url("down-disabled.png");
 }
 
-scrollbar.horizontal button.up, menuitem arrow:dir(rtl) {
+menuitem arrow:dir(rtl) {
 	background-image: url("left.png")
 }
 
