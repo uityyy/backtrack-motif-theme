@@ -13,6 +13,7 @@
 * {
 	outline: 1px solid @text_color;
 	outline-offset: -2px;
+	-gtk-icon-style: regular;
 }
 
 /* Magic color names that Thunar uses */
