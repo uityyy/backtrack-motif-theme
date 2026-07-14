@@ -15,6 +15,10 @@
 	outline-offset: -2px;
 }
 
+/* Magic color names that Thunar uses */
+@define-color theme_selected_bg_color @selected_bg;
+@define-color theme_unfocused_selected_bg_color @selected_bg;
+
 /* Text and background color */
 .background, button, calendar.header, frame, menu, menubar,
 notebook, paned, slider, tab:checked, .toolbar {
@@ -294,7 +298,7 @@ separator {
 
 toolbar separator {
 	border: 0px;
-	width: 10px;
+	min-width: 10px;
 }
 
 paned separator {
