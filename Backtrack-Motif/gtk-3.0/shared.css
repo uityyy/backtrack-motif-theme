@@ -11,38 +11,38 @@
 
 /* Focus indicators */
 * {
-	outline: 1px solid @text_color;
+	outline: 1px solid @fg_color;
 	outline-offset: -2px;
 	-gtk-icon-style: regular;
 }
 
 /* Magic color names that Thunar uses */
-@define-color theme_selected_bg_color @selected_bg;
-@define-color theme_unfocused_selected_bg_color @selected_bg;
+@define-color theme_selected_bg_color @selected_bg_color;
+@define-color theme_unfocused_selected_bg_color @selected_bg_color;
 
 /* Text and background color */
 .background, button, calendar.header, frame, menu, menubar,
 notebook, paned, slider, tab:checked, .toolbar {
-	color: @text_color;
-	background-color: @control_bg;
+	color: @fg_color;
+	background-color: @bg_color;
 }
 
 .textview, .view, combobox menu, iconview, list,
 textview text, sidebar treeview, view {
-	color: @text_color;
-	background-color: @view_bg;
+	color: @fg_color;
+	background-color: @base_color;
 }
 
 entry {
-	color: @entry_text_color;
-	background-color: @entry_bg;
+	color: @entry_fg_color;
+	background-color: @entry_bg_color;
 }
 
 combobox combobox menuitem:focus, menuitem:checked, levelbar .filled,
 progress, switch:checked, 
 :selected, selection, XfdesktopIconView.label:selected {
-	color: @selected_text;
-	background-color: @selected_bg;
+	color: @selected_fg_color;
+	background-color: @selected_bg_color;
 }
 
 button:checked, calendar.highlight, progressbar, switch,
@@ -51,7 +51,7 @@ scrollbar, tab, tab:not(:checked) button, toolbar :disabled {
 }
 
 *:disabled {
-	color: @disabled_text;
+	color: @insensitive_fg_color;
 	text-shadow: 1px 1px 0 @illumination;
 }
 
@@ -64,8 +64,8 @@ tooltip.background {
 }
 
 .rubberband, XfdesktopIconView .rubberband {
-	background-color: alpha(@selected_bg, .3);
-	border: 1px solid @selected_bg;
+	background-color: alpha(@selected_bg_color, .3);
+	border: 1px solid @selected_bg_color;
 }
 
 button.link label {
@@ -73,7 +73,7 @@ button.link label {
 }
 
 button.link:not(:disabled) label {
-	color: @selected_bg;
+	color: @selected_bg_color;
 }
 
 /* Sizes and margins */
@@ -188,11 +188,11 @@ frame, notebook {
 }
 
 frame.border-groove {
-	border: 2px groove shade(@control_bg, 0.7);
+	border: 2px groove shade(@bg_color, 0.7);
 }
 
 frame.border-ridge {
-	border: 2px ridge shade(@control_bg, 0.7);
+	border: 2px ridge shade(@bg_color, 0.7);
 }
 
 button:not(.flat), #applicationmenu-button, calendar, calendar.header, check,
@@ -224,25 +224,25 @@ scrolledwindow > scrollbar.horizontal {
 }
 
 progress, levelbar .filled {
-        border: 2px outset shade(@selected_bg, 0.9);
+        border: 2px outset shade(@selected_bg_color, 0.9);
 }
 
 button:focus, button.default, entry:focus,
 scale:focus, switch slider:focus {
-	outline: 2px solid @text_color;
+	outline: 2px solid @fg_color;
 	outline-offset: 5px;
 	box-shadow:  -3px 3px 0 0 @border_color, 3px -3px 0 0 @border_color, -3px -3px 0 0 @border_color,
 		3px -2px 0 0 @illumination, -2px 3px 0 0 @illumination, 3px 3px 0 0 @illumination,
-		-2px -2px 0 0 @control_bg, 2px -2px 0 0 @control_bg, 
-		2px 2px 0 0 @control_bg, -2px 2px 0 0 @control_bg;
+		-2px -2px 0 0 @bg_color, 2px -2px 0 0 @bg_color, 
+		2px 2px 0 0 @bg_color, -2px 2px 0 0 @bg_color;
 }
 
 checkbutton:focus, entry:focus, label:focus, radiobutton:focus {
-	outline: 1px solid @text_color;
+	outline: 1px solid @fg_color;
 }
 
 button:active, .xfce4-panel button:active, check:checked {
-	background-color: @pressed_bg;
+	background-color: @active_bg_color;
 }
 
 stack, tab {
@@ -280,8 +280,8 @@ combobox menuitem, combobox menuitem:selected, combobox menuitem:hover {
 }
 
 combobox menuitem:selected, combobox menuitem:hover {
-	color: @selected_text;
-	background-color: @selected_bg;
+	color: @selected_fg_color;
+	background-color: @selected_bg_color;
 }
 
 switch:checked {
@@ -328,14 +328,14 @@ radio:checked {
 scrollbar.vertical button.up {
 	background: linear-gradient(-65deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
 		linear-gradient(transparent 85%, @border_color 85%),
-		linear-gradient(65deg, @control_bg 62%, @border_color 62%, @border_color 72%, @shadow 72%);
+		linear-gradient(65deg, @bg_color 62%, @border_color 62%, @border_color 72%, @shadow 72%);
 	margin-bottom: 1px;
 }
 
 scrollbar.vertical button.down {
 	background: linear-gradient(@illumination 15%, transparent 15%),
 		linear-gradient(-241deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
-		linear-gradient(241deg, @control_bg 62%, @illumination 62%, @illumination 72%, @shadow 72%);
+		linear-gradient(241deg, @bg_color 62%, @illumination 62%, @illumination 72%, @shadow 72%);
 	margin-top: 1px;
 }
 
@@ -348,14 +348,14 @@ scrollbar.vertical button.up:active {
 scrollbar.vertical button.down:active {
 	background: linear-gradient(@border_color 15%, transparent 15%),
 		linear-gradient(-241deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
-		linear-gradient(241deg, @control_bg 62%, @border_color 62%, @border_color 72%, @shadow 72%);
+		linear-gradient(241deg, @bg_color 62%, @border_color 62%, @border_color 72%, @shadow 72%);
 }
 
 scrollbar.horizontal button.up {
         background:
                 linear-gradient(-25deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
 		linear-gradient(-155deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
-                linear-gradient(90deg, @control_bg 85%, @border_color 85%);
+                linear-gradient(90deg, @bg_color 85%, @border_color 85%);
         margin-right: 1px;
 }
 
@@ -363,7 +363,7 @@ scrollbar.horizontal button.down {
         background:
                 linear-gradient(25deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
 		linear-gradient(155deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
-                linear-gradient(-90deg, @control_bg 85%, @illumination 85%);
+                linear-gradient(-90deg, @bg_color 85%, @illumination 85%);
         margin-left: 1px;
 }
 
@@ -371,14 +371,14 @@ scrollbar.horizontal button.up:active {
         background:
                 linear-gradient(-25deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
 		linear-gradient(-155deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
-                linear-gradient(90deg, @control_bg 85%, @illumination 85%);
+                linear-gradient(90deg, @bg_color 85%, @illumination 85%);
 }
 
 scrollbar.horizontal button.down:active {
         background:
                 linear-gradient(25deg, transparent 62%, @border_color 62%, @border_color 72%, @shadow 72%),
 		linear-gradient(155deg, transparent 62%, @illumination 62%, @illumination 72%, @shadow 72%),
-                linear-gradient(-90deg, @control_bg 85%, @border_color 85%);
+                linear-gradient(-90deg, @bg_color 85%, @border_color 85%);
 }
 
 combobox arrow, expander arrow:checked {
