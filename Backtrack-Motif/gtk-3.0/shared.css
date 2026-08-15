@@ -21,8 +21,8 @@
 @define-color theme_unfocused_selected_bg_color @selected_bg_color;
 
 /* Text and background color */
-.background, button, calendar.header, frame, menu, menubar,
-notebook, paned, slider, tab:checked, .toolbar {
+.background, button, calendar.header, frame, headerbar,
+menu, menubar, notebook, paned, slider, tab:checked, .toolbar {
 	color: @fg_color;
 	background-color: @bg_color;
 }
